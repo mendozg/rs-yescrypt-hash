@@ -8,9 +8,9 @@ fn main(){
     let mut cc = cc::Build::new();
 
     cc.flag("-march=native")
-    .include("ext/yescrypt")
-    .file("ext/yescrypt/yescrypt.c")
-    .compile("libyescrypt.a");
+    .include("src/yescrypt")
+    .file("src/yescrypt_hash.c")
+    .compile("src");
 
     println!(
         "cargo:rustc-link-search=native={}",

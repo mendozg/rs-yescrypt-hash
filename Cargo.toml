@@ -3,7 +3,7 @@ name = "rs-yescrypt-hash"
 authors = ["Gabriel Mendoza <gabrielemf@hotmail.com>"]
 description = "Bindings into C for `Yescrypt` algorithm"
 repository = "https://github.com/mendozg/rs-yescrypt-hash"
-version = "0.5.0"
+version = "0.5.1"
 build = "build.rs"
 keywords = ["rust", "crypto", "yescrypt", "POW"]
 readme = "README.md"
@@ -15,8 +15,7 @@ license = "MIT"
 cc = "1.0.77"
 
 [dependencies]
-clippy = {version = "0.0", optional = true}
-hex = "0.4"
+hex = "0.4.3"
 unicode-segmentation = "0.1.2"
 
 [lib]
@@ -26,6 +25,3 @@ crate-type = ["rlib", "cdylib"]
 [profile.release]
 lto = "thin"
 opt-level = 3
-
-[features]
-dev = ["clippy"]

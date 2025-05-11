@@ -1,8 +1,7 @@
 //! # C bindings to `Yescrypt` key derivation function
 
 
-#![cfg_attr(feature = "dev", feature(plugin))]
-#![cfg_attr(feature = "dev", plugin(clippy))]
+
 #![allow(non_upper_case_globals)]
 
 
