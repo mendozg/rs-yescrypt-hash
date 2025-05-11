@@ -1,18 +1,23 @@
 //! # C bindings to `Yescrypt` key derivation function
 
-
-
-#![allow(non_upper_case_globals)]
-
-
-#[link(name = "yescrypt")]
+#[cfg(windows)]
+#[no_mangle]
 extern "C" {
-    pub fn yescrypt_hash(
+    fn yescrypt_hash(
         passwd: *const u8,
         buf: *mut u8,
-    ) -> ::std::os::raw::c_int;
+    );
 }
 
+#[cfg(not(windows))]
+#[allow(unused_attributes)]
+#[no_mangle]
+extern "C" {
+    fn yescrypt_hash(
+        passwd: *const u8,
+        buf: *mut u8,
+    );
+}
 
 /// Derive fixed size key for given `salt` and `passphrase`
 ///
